@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define f(x) 3*x - cos(x) - 1
+#define f(x) 3*x-cos(x)-1
 int main()
 {
     int i=0;
@@ -10,11 +10,12 @@ int main()
         fa=f(a);
         fb=f(b);
         if(fa*fb>0){
-            cout<<"Incorrect initial guess";
+            cout<<"Incorrect inital guess";
             goto up;
         }
-        do{
-            c=(a+b)/2;
+        do
+        {
+            c=((a*fb)-(b*fa))/(fb-fa);
             fc=f(c);
             if(fa*fc>0){
                 a=c;
@@ -23,10 +24,9 @@ int main()
                 b=c;
                 fb=fc;
             }
-        i++;
-        }
-        while (fabs(fc)>0.01);
-        cout<<"Root is "<<c<<endl;
-        cout<<"i is "<<i<<endl;     
-        return 0;  
+            i++;
+        } while (fabs(fc)>0.01);
+        cout<<"root is "<<c<<endl;
+        cout<<"Step count "<<i<<endl;        
+    return 0;
 }
