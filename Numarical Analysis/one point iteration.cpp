@@ -1,24 +1,21 @@
-#include <iostream>
-#include <cmath>
+#include<bits/stdc++.h>
 using namespace std;
-
 #define f(x) (3*x - cos(x) - 1)
-#define g(x) (cos(x)/3 + 1/3)
+#define g(x) (cos(x)/3 + 1/3.0)
 
-int main() {
-    int i= 0;
-    float x1, x2;
-    up:
-        cin >> x1;
-        do {
-            x2 = g(x1);
-            i++;
-            if (i > 1000) {
-                cout << "The given sequence is not convergent";
-                goto up;
-            }
-            x1 = x2;
-        } while (fabs(f(x2)) > 0.01);
-        cout << "An approximate solution is " << x2 << "\n";
-        return 0;
+int main()
+{
+    int i = 0;
+    float x0, x1, epsilon=0.01;
+    cin >> x0;
+    do {
+        x1 = g(x0); 
+        i++;
+        x0 = x1;
+    } while(fabs(f(x1)) > epsilon); 
+     cout << fixed << setprecision(2);
+    cout << "Root is " << x1  << endl;
+    // cout << "Iterations: " << i << endl;
+
+    return 0;  
 }
