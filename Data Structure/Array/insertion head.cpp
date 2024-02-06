@@ -2,12 +2,11 @@
 using namespace std;
 int main()
 {
-    int n,num,pos;
+    int n,num,pos=1;
     cin>>n;
     int arr[n];
     for(int i=0; i<n; i++)cin>>arr[i];
     cin>>num;
-    cin>>pos;
     if(pos<=0 || pos>n+1)cout<<"not possible"<<endl;
     else{
         for(int i=n-1; i>=pos-1; i--){
