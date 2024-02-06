@@ -1,0 +1,9 @@
+1. Array 
+    . Array is a fixed size sequience collection of data item of same data type
+    . access a particular element 
+    . data item are stored in continuous location 
+    . Random access taking constant time
+    1.1 Traversal 
+        . Visiting every element exactly onece .
+    1.2 Insersion
+        . 
