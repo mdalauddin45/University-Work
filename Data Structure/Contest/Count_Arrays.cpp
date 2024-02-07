@@ -1,41 +1,44 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
+
+#define ll long long
+
 const int MOD = 998244353;
-const int MAX_N = 1000006;
+const ll INF = LLONG_MAX;
 
-int bitwiseOR(int a, int b) {
-    return a | b;
-}
 
-int countGoodArrays(int N, int K) {
-    vector<vector<int>> dp(N + 1, vector<int>(K + 1));
-    dp[0][0] = 1;
-    
-    for (int i = 1; i <= N; ++i) {
-        for (int j = 0; j <= K; ++j) {
-            for (int k = 0; k <= j; ++k) {
-                dp[i][j] = (dp[i][j] + dp[i - 1][j - k]) % MOD;
-            }
+ll poww(ll x, ll y) {
+    ll Res = 1;
+    while (y) {
+        if (y & 1) {
+            Res *= x;
+            Res %= MOD;
         }
+        x *= x;
+        x %= MOD;
+        y /= 2;
     }
-    
-    int result = 0;
-    for (int j = 0; j <= K; ++j) {
-        result = (result + dp[N][j]) % MOD;
-    }
-    
-    return result;
+    return Res;
 }
 
-int main()
-{
-    int T;
-    cin >> T;
-    
-    while (T--) {
-        int N, K;
-        cin >> N >> K;
-        cout << countGoodArrays(N, K) << endl;
+void sol() {
+    ll n, k;
+    cin >> n >> k;
+    if (k == 0) {
+        cout << 1;
+        return;
+    }
+    ll che = poww(2, n - 1);
+    che= poww(che, k);
+    cout << che;
+}
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        sol();
+        cout << endl;
     }
     return 0;
 }

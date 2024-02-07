@@ -1,25 +1,41 @@
-#include<bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
 using namespace std;
-int main()
-{
+
+void display(vector<int>& a, int n) 
+{ 
+  for (int i = 0; i < n; i++) { 
+    cout << a[i] << " "; 
+  } 
+  cout << endl; 
+} 
+
+int main() {
     int t;
     cin >> t;
-    while (t--)
-    {
+
+    while (t--) {
         int n;
-        cin>>n;
-        vector<int>nums(2*n);
-        for(int i=0;i<2*n;i++) cin >> nums[i];
-        next_permutation(nums.begin(), nums.end());
-        vector<int> p(n);
+        cin >> n;
+
+        vector<int> arr(2 * n);
+        for (int i = 0; i < 2 * n; i++) {
+            cin >> arr[i];
+        }
+
+        sort(arr.begin(), arr.end());
+
+        // Create and display the permutation P
+        vector<int> p;
         for (int i = 0; i < n; i++) {
-            p[i] = nums[i + n];
+            p.push_back(arr[i]);
+            p.push_back(arr[n + i]);
         }
-        for (int num : p) {
-            cout << num << " ";
-        }
-        cout<<endl;
+        sort(arr.begin(), arr.end());
+        display(p, 2 * n);
     }
-    
+
     return 0;
 }
