@@ -3,25 +3,27 @@ using namespace std;
 int main()
 {
     int t;
-    cin>>t;
+    cin >> t;
     while (t--)
     {
         int x;
-        cin>>x;
-        int pregift = 1;
+        cin >> x;
+        int sum = 1;
         bool ans = true;
-        for(int i=1;i<=7;i++){
-            if(x>=pregift*2){
-                x-=pregift*2;
-                pregift*=2;
-            }else{
-                ans=false;
+        int day = 7;
+        for (int i = 1; i <= day; i++) {
+
+            x -= sum;
+            sum *= 2;
+
+            if (x < 0) {
+                ans = false;
                 break;
             }
         }
-        if(ans) cout<<"YES"<<endl;
-        else cout<<"NO"<<endl;
+        if (ans) cout << "YES" << endl;
+        else cout << "NO" << endl;
     }
-    
+
     return 0;
 }
