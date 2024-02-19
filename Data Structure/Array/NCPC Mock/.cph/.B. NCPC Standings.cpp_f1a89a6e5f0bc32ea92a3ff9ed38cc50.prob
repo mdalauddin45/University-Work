@@ -1,0 +1,1 @@
+{"name":"Local: B","url":"e:\\University\\Data Structure\\Array\\NCPC Mock\\B. NCPC Standings.cpp","tests":[{"id":1708360485082,"input":"2\n10 0 165\n10 10 1","output":"Case 1: Yes\nCase 2: Yes"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\University\\Data Structure\\Array\\NCPC Mock\\B. NCPC Standings.cpp","group":"local","local":true}
