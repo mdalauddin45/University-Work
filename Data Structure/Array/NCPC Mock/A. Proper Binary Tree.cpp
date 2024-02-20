@@ -176,6 +176,10 @@ int main()
             cout << "o--|__|\n";
             cout << "o--|\n";
         }
+
+
+
+
     }
     
     return 0;
