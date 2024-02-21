@@ -1,52 +1,47 @@
 #include<bits/stdc++.h>
 using namespace std;
-
 const int MOD = 1e9 + 7;
+int countWays(int n, vector<vector<int>> arr) {
+    vector<vector<int>> dp(n + 1, vector<int>(n * n + 1, 0));
+    dp[0][0] = 1;
 
-int countWays(int N, vector<vector<int>>& A, int i, int j, int k, vector<vector<vector<int>>>& dp) {
-    if (A[i][j] != 0 && A[i][j] != k) {
-        return 0;
+    for (int i = 1; i <= n; ++i) {
+        for (int j = 0; j <= n * n; ++j) {
+            for (int k = 0; k <= n * n-i; ++k) {
+                if (arr[i - 1][j-1] == 0 || arr[i - 1][j] == k) {
+                    if (j >= k) {
+                        dp[i][j] = (dp[i][j] + dp[i - 1][j - k]) % MOD;
+                    }
+                }
+            }
+        }
+    }
+    int result = 0;
+    for (int j = 0; j <= n * n; ++j) {
+        result = (result + dp[n][j]) % MOD;
     }
 
-    if (i == N - 1 && j == 0 && A[i][j] == 0) {
-        return 1;
-    }
-
-    if (dp[i][j][k] != -1) {
-        return dp[i][j][k];
-    }
-
-    int ways = 0;
-    for (int x = 0; x < 2 * N * N; ++x) {
-        ways = (ways + countWays(N, A, i + 1, x, A[i][j], dp)) % MOD;
-    }
-
-    return dp[i][j][k] = ways;
+    return result;
 }
 
+
+
 int main() {
-    int T;
-    cin >> T;
+    int t;
+    cin >> t;
 
-    while (T--) {
-        int N;
-        cin >> N;
-
-        vector<vector<int>> A(N, vector<int>(N, 0));
-        for (int i = 0; i < N; ++i) {
-            for (int j = 0; j < N; ++j) {
-                cin >> A[i][j];
+    while (t--) {
+        int n;
+        cin >> n;
+        vector<vector<int>> arr(n, vector<int>(n));
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < n; ++j) {
+                cin >> arr[i][j];
             }
         }
 
-        vector<vector<vector<int>>> dp(N, vector<vector<int>>(2 * N * N, vector<int>(N * N + 1, -1)));
-
-        int result = 0;
-        for (int j = 0; j < 2 * N * N; ++j) {
-            result = (result + countWays(N, A, 0, j, 0, dp)) % MOD;
-        }
-
-        cout << result << endl;
+        int ways = countWays(n, arr);
+        cout << ways << endl;
     }
 
     return 0;

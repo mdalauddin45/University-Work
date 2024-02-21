@@ -1,28 +1,53 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-int mincost(int n) {
-    int cost = 0;
-    string br = bitset<32>(n).to_string();
-    for (int i = 0; i < br.length() - 2; ++i) {
-        if (br.substr(i, 3) == "101") {
-            int x = br.length() - i - 3;
-            cost += pow(2, x);
-        }
-        
-    }
-    return cost;
-}
 
-int main() {
-    int t;
-    cin >> t;
-    
-    while (t--) {
-        int n;
-        cin >> n;
-        int result = mincost(n);
-        cout << result << endl;
+
+
+int  main() {
+
+ int t;
+ cin>>t;
+ 
+ while(t--){
+  int n;
+  cin>>n;
+  
+  int cnt=0;
+  int pos=0;
+  for(int i=31;i>=0;i--){
+   if(n & (1LL<<i)){
+    if(pos==0){
+        pos=i;
+        }
+    if(cnt==0 or cnt==2){
+        cnt++;
+        }
+   }
+   else{
+    if(cnt==1){
+        cnt=2;
+        }
+   }
+  }
+  if(cnt!=3){
+    cout<<0<<endl;continue;
     }
-    return 0;
+
+  int curnum=0;
+  int ans=1e18;
+  
+  for(int i=pos;i>=0;i--){
+   curnum=curnum+pow(2,i);
+  
+   if(curnum<n){
+    continue;
+    }
+   ans=min(ans,curnum-n);
+  }
+  cout<<ans<<endl;
+  
+ }
+ 
+ return 0;
 }
