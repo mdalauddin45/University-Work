@@ -2,7 +2,9 @@
   "C_Cpp_Runner.msvcBatchPath": "",
   "files.associations": {
     "*.embeddedhtml": "html",
-    "ostream": "cpp"
+    "ostream": "cpp",
+    "random": "cpp",
+    "iostream": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",
