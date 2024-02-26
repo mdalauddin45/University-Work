@@ -11,6 +11,14 @@ typedef pair<int, int> p;
 int main()
 {
     Alauddin
-    
+    w(t){
+        int n;
+        cin>>n;
+        int arr[n][n];
+        REP(i,0,n-1){
+            REP(j,0,n-1) cin>>arr[i][j];
+        }
+       
+    }
     return 0;
 }
