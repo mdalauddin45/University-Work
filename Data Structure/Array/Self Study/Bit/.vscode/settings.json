@@ -59,6 +59,8 @@
   "files.associations": {
     "*.embeddedhtml": "html",
     "ostream": "cpp",
-    "random": "cpp"
+    "random": "cpp",
+    "bitset": "cpp",
+    "iostream": "cpp"
   }
 }

@@ -13,7 +13,7 @@ typedef long long int lli;
 int main()
 {
     Alauddin
-    int a=7, b=4;
+    int a=53, b=28;
     
     int c = a & b; //AND
     int d = a | b; //OR
@@ -21,6 +21,7 @@ int main()
     int f = ~b ; //NOT
     int g = a<<b ; //left shift
     int h = a>>b ; //Right shift
-    cout<<h<<endl;
+    // cout<<h<<endl;
+    cout<<bitset<8>(c) <<endl;
     return 0;
 }
