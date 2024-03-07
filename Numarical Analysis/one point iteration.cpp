@@ -1,7 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define f(x) (3*x - cos(x) - 1)
-#define g(x) (cos(x)/3 + 1/3.0)
+// #define f(x) (3*x - cos(x) - 1)
+// #define g(x) (cos(x) + 1)/3
+#define f(x) ((x)*(x)*(x) - 2*(x) - 5)
+#define g(x) cbrt(2*x+5)
 
 int main()
 {

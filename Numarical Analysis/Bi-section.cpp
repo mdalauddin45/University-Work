@@ -1,7 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define f(x) 3*x - cos(x) - 1
-int main()
+// #define f(x) 3*x - cos(x) - 1
+#define f(x) ((x)*(x)*(x) - 2*(x) - 5)
+ int main()
 {
     int i=0;
     float a,b,fa,fb,c,fc;

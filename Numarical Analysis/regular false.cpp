@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define f(x) 3*x-cos(x)-1
+// #define f(x) 3*x-cos(x)-1
+#define f(x) ((x)*(x)*(x) - 2*(x) - 5)
+
 int main()
 {
     int i=0;
