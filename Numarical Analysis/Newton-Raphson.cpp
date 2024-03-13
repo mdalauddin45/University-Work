@@ -3,8 +3,10 @@ using namespace std;
 
 // #define f(x) (3*x - cos(x) - 1)
 // #define df(x) (3 + sin(x))
-#define f(x) ((x)*(x)*(x) - 2*(x) - 5)
-#define df(x) (2*x*x-2)
+// #define f(x) ((x)*(x)*(x) - 2*(x) - 5)
+// #define df(x) (2*x*x-2)
+#define f(x) (x*sin(x)+cos(x))
+#define df(x) (x*cos(x)-sin(x))
 
 int main()  
 {
@@ -19,6 +21,6 @@ int main()
     cout << fixed << setprecision(2);
     cout << "Root is " << x1 << endl;
     cout << "Iterations: " << i << endl;
-
+    
     return 0;  
 }
