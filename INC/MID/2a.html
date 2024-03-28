@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        #div1{
+            border: 1px solid black;
+            padding: 10px;
+            width:50%;
+        }
+        #div1 h1{
+            margin: 10px;
+        }
+        #div2{
+            border: 1px solid black;
+            padding: 10px 20px;
+            width:50%;
+        }
+        #div2 h1{
+            margin: 10px;
+        }
+        #div{
+            display:flex;
+            alaign-itme: center;
+            justify-content:space-between;
+        }
+        body{
+            border: 1px solid black;
+            padding:10px;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>div</h1>
+    <div id="div">
+      <div id="div1">
+        <h1>Div1</h1>
+      </div>
+      <div id="div2">
+        <h1>Div2</h1>
+        <div>
+          <div id="div1"><h1>Div1</h1></div>
+          <div id="div1"><h1>Div2</h1></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
