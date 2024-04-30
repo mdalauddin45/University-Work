@@ -2,7 +2,7 @@
 using namespace std;
 
 int toh(int n){
-    if(n==2) return 1;
+    if(n==1) return 1;
     else return 2*toh(n-1)+1;
 }
 int main(){

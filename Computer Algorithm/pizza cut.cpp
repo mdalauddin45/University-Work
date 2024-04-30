@@ -2,8 +2,8 @@
 using namespace std;
 
 int p(int n){
-    if(n==2) return 2;
-    else return p(n-1)+n;
+    if(n==1) return 2;
+    else return p(n-1)+n; 
 }
 int main(){
     int n;
