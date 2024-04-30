@@ -29,3 +29,5 @@ int main()
     cout << endl;
     return 0;
 }
+
+//0(n*n)
