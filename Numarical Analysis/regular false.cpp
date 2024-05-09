@@ -28,7 +28,6 @@ int main()
             }
             i++;
         } while (fabs(fc)>0.01);
-        cout<<"root is "<<c<<endl;
-        cout<<"Step count "<<i<<endl;        
+        cout<<"root is "<<c<<endl;   
     return 0;
 }

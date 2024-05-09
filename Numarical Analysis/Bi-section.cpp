@@ -28,6 +28,5 @@ using namespace std;
         }
         while (fabs(fc)>0.01);
         cout<<"Root is "<<c<<endl;
-        cout<<"i is "<<i<<endl;     
         return 0;  
 }

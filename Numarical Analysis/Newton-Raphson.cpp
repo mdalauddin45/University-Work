@@ -20,7 +20,6 @@ int main()
     } while(fabs(f(x1 )) > epsilon); 
     cout << fixed << setprecision(2);
     cout << "Root is " << x1 << endl;
-    cout << "Iterations: " << i << endl;
     
     return 0;  
 }
