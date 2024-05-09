@@ -58,7 +58,7 @@
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "files.associations": {
     "*.embeddedhtml": "html",
-    "random": "cpp",
+    "numeric": "cpp",
     "ostream": "cpp",
     "iostream": "cpp"
   }

@@ -5,6 +5,8 @@ typedef vector<int> vi;
 typedef pair<int, int> p;
 typedef long long ll;
 typedef long long int lli;
+const int N=1e5+7;
+int nums[N];
  
 #define cn(n)           cin>>n;
 #define w(t)            int t;cin>>t;while(t--)
@@ -14,12 +16,6 @@ typedef long long int lli;
 int main()
 {
     Alauddin
-    w(t){
-        int n,a,b; cin>>n>>a>>b;
-        int result=0;
-        if (n % 2 == 0)  result = min(n * a, n / 2 * b);
-        else result = min(n * a, (n / 2) * b + a);
-        cout << result << endl;
-    }
+    
     return 0;
 }
