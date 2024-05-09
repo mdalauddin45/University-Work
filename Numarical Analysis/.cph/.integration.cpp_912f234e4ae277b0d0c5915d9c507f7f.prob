@@ -1,0 +1,1 @@
+{"name":"Local: integration","url":"e:\\University\\Numarical Analysis\\integration.cpp","tests":[{"id":1715235591497,"input":"1 0","output":"0.784"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\University\\Numarical Analysis\\integration.cpp","group":"local","local":true}
