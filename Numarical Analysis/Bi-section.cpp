@@ -1,10 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
-// #define f(x) 3*x - cos(x) - 1
-#define f(x) ((x)*(x)*(x) - 2*(x) - 5)
+#define f(x) (x*x*x + 3*x - 5)
  int main()
 {
-    int i=0;
     float a,b,fa,fb,c,fc;
     up:
         cin>>a>>b;
@@ -24,7 +22,6 @@ using namespace std;
                 b=c;
                 fb=fc;
             }
-        i++;
         }
         while (fabs(fc)>0.01);
         cout<<"Root is "<<c<<endl;
