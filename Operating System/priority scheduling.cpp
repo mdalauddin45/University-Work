@@ -10,9 +10,9 @@ int main() {
 
     for (int i = 0; i < n; i++) {
         p[i] = i + 1;  
-        cout << "Enter burst time for process" << p[i] << ": ";
+        cout << "Enter burst time for process " << p[i] << ": ";
         cin >> bt[i];
-        cout << "Enter priority for process" << p[i] << ": ";
+        cout << "Enter priority for process " << p[i] << ": ";
         cin >> priority[i];
     }
 
