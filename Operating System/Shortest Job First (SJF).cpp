@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 int main()
 {
@@ -52,7 +52,7 @@ int main()
         cout << pid[i] << "\t" << burstTime[i] << "\t"
              << waitingTime[i] << "\t" << turnaroundTime[i] << endl;
     }
-
+    
     cout << "\nAverage Waiting Time: " << (double)totalWaitingTime / n <<endl;
     cout << "Average Turnaround Time: " << (double)totalTurnaroundTime / n << endl;
 
