@@ -6,55 +6,55 @@ int main()
     cout << "Enter the number of processes: ";
     cin >> n;
 
-    int pid[n], burstTime[n], waitingTime[n], turnaroundTime[n];
+    int p[n], bt[n], wt[n], tat[n];
     for (int i = 0; i < n; i++)
     {
-        pid[i] = i + 1;
-        cout << "Enter burst time for process " << pid[i] << ": ";
-        cin >> burstTime[i];
+        p[i] = i + 1;
+        cout << "Enter burst time for process " << p[i] << ": ";
+        cin >> bt[i];
     }
 
     for (int i = 0; i < n - 1; i++)
     {
         for (int j = i + 1; j < n; j++)
         {
-            if (burstTime[i] > burstTime[j])
+            if (bt[i] > bt[j])
             {
 
-                int temp = burstTime[i];
-                burstTime[i] = burstTime[j];
-                burstTime[j] = temp;
+                int temp = bt[i];
+                bt[i] = bt[j];
+                bt[j] = temp;
 
-                temp = pid[i];
-                pid[i] = pid[j];
-                pid[j] = temp;
+                temp = p[i];
+                p[i] = p[j];
+                p[j] = temp;
             }
         }
     }
 
-    int totalWaitingTime = 0, totalTurnaroundTime = 0;
-    waitingTime[0] = 0;
+    int totalwt = 0, totaltat = 0;
+    wt[0] = 0;
     for (int i = 1; i < n; i++)
     {
-        waitingTime[i] = waitingTime[i - 1] + burstTime[i - 1];
-        totalWaitingTime += waitingTime[i];
+        wt[i] = wt[i - 1] + bt[i - 1];
+        totalwt += wt[i];
     }
 
     for (int i = 0; i < n; i++)
     {
-        turnaroundTime[i] = waitingTime[i] + burstTime[i];
-        totalTurnaroundTime += turnaroundTime[i];
+        tat[i] = wt[i] + bt[i];
+        totaltat += tat[i];
     }
 
-    cout << "\nPID\tBurst\tWaiting\tTurnaround"<<endl;
+    cout << "\np\tBurst\tWaiting\tTurnaround"<<endl;
     for (int i = 0; i < n; i++)
     {
-        cout << pid[i] << "\t" << burstTime[i] << "\t"
-             << waitingTime[i] << "\t" << turnaroundTime[i] << endl;
+        cout << p[i] << "\t" << bt[i] << "\t"
+             << wt[i] << "\t" << tat[i] << endl;
     }
     
-    cout << "\nAverage Waiting Time: " << (double)totalWaitingTime / n <<endl;
-    cout << "Average Turnaround Time: " << (double)totalTurnaroundTime / n << endl;
+    cout << "\nAverage Waiting Time: " << (double)totalwt / n <<endl;
+    cout << "Average Turnaround Time: " << (double)totaltat / n << endl;
 
     return 0;
 }
