@@ -1,13 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main() {
-    int n;
+    int n; double totalwt = 0, totaltt = 0;
     cout << "Enter the number of processes: ";
     cin >> n;
-
     int p[n], bt[n], priority[n], wt[n], tat[n];
-    double totalwt = 0, totaltt = 0;
-
     for (int i = 0; i < n; i++) {
         p[i] = i + 1;  
         cout << "Enter burst time for process " << p[i] << ": ";
@@ -15,8 +12,6 @@ int main() {
         cout << "Enter priority for process " << p[i] << ": ";
         cin >> priority[i];
     }
-
-    
     for (int i = 0; i < n - 1; i++) {
         for (int j = i + 1; j < n; j++) {
             if (priority[i] < priority[j]) {
@@ -40,7 +35,6 @@ int main() {
         wt[i] = wt[i - 1] + bt[i - 1];
         totalwt += wt[i];
     }
-
     for (int i = 0; i < n; i++) {
         tat[i] = wt[i] + bt[i];
         totaltt += tat[i];
@@ -52,6 +46,5 @@ int main() {
     }
     cout << "Average Waiting Time: " << (double)totalwt / n << endl;
     cout << "Average Turnaround Time: " << (double)totaltt / n << endl;
-
     return 0;
 }
