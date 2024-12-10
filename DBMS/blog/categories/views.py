@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from .import forms
+from django.contrib import messages
 
 # Create your views here.
 def add_category(request):
@@ -8,6 +9,7 @@ def add_category(request):
         if category_form.is_valid():
             print(category_form.cleaned_data)
             category_form.save()
+            messages.success(request,'Category added successfully!')
             return redirect('add_category')
     else:
         category_form = forms.CategoryForm()

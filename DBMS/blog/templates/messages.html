@@ -1,0 +1,21 @@
+{% for message in messages %}
+    {% if message.tags == 'success' %}
+        <div class="bg-white border-t-4 border-[#c19b76] rounded-b text-[#c19b76] px-4 py-3 shadow-md mt-2" role="alert">
+            <div class="flex">
+                <div>
+                    <p class="font-bold">Success!</p>
+                    <p class="text-sm">{{ message }}</p>
+                </div>
+            </div>
+        </div>
+    {% elif message.tags == 'error' %}
+        <div class="bg-red-100 border-t-4 border-red-500 rounded-b text-red-900 px-4 py-3 shadow-md mt-2" role="alert">
+            <div class="flex">
+                <div>
+                    <p class="font-bold">Error!</p>
+                    <p class="text-sm">{{ message }}</p>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}
